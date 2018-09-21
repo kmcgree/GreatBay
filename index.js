@@ -1,6 +1,14 @@
 const inquire = require('inquirer');
 const mysql = require('mysql');
 
+const connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'root',
+    password: '',
+    database: 'Great_Bay',
+});
+
 const start = () => {
     inquire.prompt(
         [
@@ -42,5 +50,25 @@ const postItem = () => {
     })
 };
 
-const 
-start()
+const bidItem = () => {
+    inquire.prompt([
+        {
+            type: 'input',
+            name: "item",
+            message: "What item are you posting"
+        },
+        {
+            type: 'input',
+            name: 'price',
+            message: 'Enter a starting price'
+        }
+    ]).then((res) => {
+        let value = [];
+        value.push(res.item);
+        value.push(res.price);
+
+        postDB(value);
+    })
+};
+
+start();
