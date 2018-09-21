@@ -8,18 +8,13 @@ CREATE TABLE Post_Item (
   id INT NOT NULL AUTO_INCREMENT,
   item_name VARCHAR(255) NULL,
   minimum_bid INT(255) NULL,
-  accept VARCHAR(255) NULL,
+  current_bid INT(255) NULL,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE Bid_Item (
-  id INT NOT NULL AUTO_INCREMENT,
-  item_name VARCHAR(255) NULL,
-  bid INT(255) NULL,
-  too_low VARCHAR(255) NULL,
-  current_bid VARCHAR(255) NULL,
-  PRIMARY KEY (id)
-);
+
+
+
 
 
 
